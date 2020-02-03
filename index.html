@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>COSC260 Full Stack Quiz</title>
+  <meta charset="UTF-8">
+  <meta name="description" content="COSC260 Assignmnet 3">
+  <meta name="keywords" content="COSC260, Web Programming, full stack">
+  <meta name="author" content="Joshua Le Gresley">
+  <!-- Sass Styling -->
+  <link href="./dist/css/main.css" type="text/css" rel="stylesheet" />
+  <title>JLG Quiz</title>
+
+</head>
+
+<body>
+  <main>
+    <!-- Registration form -->
+    <div class="form">
+      <div class="container justify-content-center">
+        <form method="post" id="registration" novalidate>
+          <div class="form-row justify-content-center">
+            <div class="form-group col-md-6">
+              <label for="name">Name</label>
+              <input name="name" type="text" class="form-control" id="name" placeholder="Your name" required>
+              <div class="valid-name text-success hidden label">
+                Looks good!
+              </div>
+              <div class="invalid-name text-danger hidden label">
+                Please add a name.
+              </div>
+            </div>
+            <!--col name-->
+            <div class="form-group col-md-2">
+              <label for="age">Age</label>
+              <input name="age" type="text" class="form-control" id="age" placeholder="Age" required>
+              <div class="valid-age text-success hidden label">
+                Looks good!
+              </div>
+              <div class="invalid-age text-danger hidden label">
+                Please enter a valid age
+              </div>
+            </div>
+            <!--col age-->
+          </div>
+          <!--row 1-->
+          <div class="form-row justify-content-center">
+            <div class="form-group col-md-8">
+              <label for="email">Email</label>
+              <input name="email" type="text" class="form-control" id="email" placeholder="Your email" required>
+              <div class="valid-email text-success  hidden label">
+                Looks good!
+              </div>
+              <div class="invalid-email text-danger hidden label">
+                Please enter a valid email.
+              </div>
+            </div>
+            <!--col email-->
+          </div>
+          <!--row 2-->
+          <div class="form-row justify-content-center">
+            <div class="form-group col-md-8">
+              <label for="phone">Phone</label>
+              <input name="phone" type="text" class="form-control" id="phone" placeholder="Your phone">
+              <div class="valid-phone text-success hidden label">
+                Looks good!
+              </div>
+              <div class="invalid-phone text-danger hidden label">
+                Please enter a valid mobile.
+              </div>
+            </div>
+            <!--col phone-->
+          </div>
+          <!--row 3-->
+
+          <div class="form-row justify-content-center">
+            <button class="btn btn-primary button" type="submit">Register</button>
+          </div>
+
+        </form>
+
+        <!-- Message console -->
+        <div id="user_message" class="container-fluid hidden">
+          <div class="row info_box justify-content-center">
+            <div class="col">
+              <h3></h3>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <p></p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <a id="startQuiz" class="btn btn-primary" href="#quiz" role="button">Start</a>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Quiz form -->
+        <form method="post" id="quiz" class="hidden">
+          <div class="form-row justify-content-flexstart">
+            <div class="form-group col-md-6">
+              <label id="quiz_question">QUESTION TEXT HERE</label>
+            </div>
+          </div>
+
+          <div id="answers" class="form-row justify-content-center">
+            <div class="form-group info_box col-md-8">
+              <input type="radio" name="answer" id="answer_a" value="A" />
+              <label for="answer_a">ANSWER 1</label>
+            </div>
+            <div class="form-group info_box col-md-8">
+              <input type="radio" name="answer" id="answer_b" value="B" />
+              <label for="answer_b">ANSWER 2</label>
+            </div>
+            <div class="form-group info_box col-md-8">
+              <input type="radio" name="answer" id="answer_c" value="C" />
+              <label for="answer_c">ANSWER 3</label>
+            </div>
+            <div class="form-group info_box col-md-8">
+              <input type="radio" name="answer" id="answer_d" value="D" />
+              <label for="answer_d">ANSWER 4</label>
+            </div>
+
+            <div class="form-row justify-content-center">
+              <button class="btn btn-primary button" type="submit">Submit form</button>
+            </div>
+
+        </form>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- Scripts -->
+
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+    integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous">
+  </script>
+  <script src="./bootstrap/js/bootstrap.min.js"></script>
+
+  <!-- custom scripts -->
+  <script src="./dist/js/validate.js"></script>
+  <script src="./dist/js/quiz.js"></script>
+
+</body>
+
+</html>

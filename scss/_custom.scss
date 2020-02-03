@@ -1,0 +1,79 @@
+body {
+    font-family: 'Cormorant', 'Open Sans', sans-serif, serif;
+}
+
+body,
+html {
+    height: 100%;
+}
+
+main {
+    height: 100vh;
+    background: url(../img/bg.jpg) center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form {
+    color: white;
+}
+
+
+/* You can add your own CSS in this file. 
+   As this file is loaded last, you can override other CSS styles, if needed.     
+*/
+
+
+/* use this class to hide elements 
+   the space for the element will NOT be preserved
+*/
+.hidden {
+    display: none;
+}
+
+/* use this class to make elements not visible
+   the space for the element WILL be preserved
+*/
+.invisible {
+    visibility: hidden;
+}
+
+/* use this class to make error text red */
+.error {
+    background-color: red;
+}
+
+/* displays large score at end of quiz */
+.results {
+    font-size: 500%;
+    margin: 0 auto;
+}
+
+/* used to re-align radio button when inserting icon */
+.absolute {
+    position: absolute;
+}
+
+/* styling to add an icon tick */
+.correctImg {
+    background: url(../img/correct.png) no-repeat right center !important;
+    background-size: 20px !important;
+    float: right !important;
+    color: #59d12a !important;
+}
+
+/* styling to add an icon cross */
+.incorrectImg {
+    background: url(../img/incorrect.png) no-repeat right center !important;
+    background-size: 20px !important;
+    float: right !important;
+    color: #dd1414 !important;
+}
+
+/* forces correct alignment of icon */
+.align {
+    padding-right: 10px !important;
+}
