@@ -2,12 +2,12 @@
 // All other regular expressions sourced from assignment2-criteria.pdf and Tutorial4-week5.pdf
 
 // jQuery onLoad
-$(function() {
+$(function () {
   initRegistrationSubmitButtonListener();
 });
 
 //anonymous function to return a jQury object
-var $element = function(tag, id_, cl, content) {
+var $element = function (tag, id_, cl, content) {
   return $(tag, {
     id: id_,
     class: cl,
@@ -17,7 +17,7 @@ var $element = function(tag, id_, cl, content) {
 
 //setup the submit event listener for the submit registration form button
 function initRegistrationSubmitButtonListener() {
-  $("#registration").submit(function(e) {
+  $("#registration").submit(function (e) {
     e.preventDefault();
     clearValidation();
 
@@ -31,15 +31,15 @@ function initRegistrationSubmitButtonListener() {
 //submit validated form to the server
 function submitRegistrationForm() {
   $.ajax({
-    url: "http://quiz.jleg13.educationhost.cloud/register.php",
+    url: "http://jleg13.educationhost.cloud/register.php",
     method: "POST",
     data: $("#registration").serialize(),
     dataType: "json",
-    success: function(data) {
+    success: function (data) {
       displayQuizMain(data);
     },
     // error function from lecture 14 code example
-    error: function(jqXHR) {
+    error: function (jqXHR) {
       var $error = JSON.parse(jqXHR.responseText);
       console.log("Status code: " + $error.error);
       console.log("Error message: " + $error.message);
@@ -56,7 +56,7 @@ function validate() {
   var $form = $("#registration [type=text]");
 
   //initially validate length of mandatory fields (ie, excluding optional phone input)
-  $form.each(function() {
+  $form.each(function () {
     if ($(this).is("#name")) {
       var $name = $(this).val();
       //name validation for length
@@ -136,7 +136,7 @@ function validate() {
 function clearValidation() {
   let $messages = $(".label");
 
-  $messages.each(function() {
+  $messages.each(function () {
     $(this).addClass("hidden");
   });
 }
@@ -154,7 +154,7 @@ function addValidation(id1, id2, status) {
 //function to display the quiz main page
 function displayQuizMain(data) {
   //hide registration form then display quiz
-  $("#registration").slideUp(500, function() {
+  $("#registration").slideUp(500, function () {
     $("#registration").addClass("hidden");
 
     //create id messege
@@ -164,7 +164,7 @@ function displayQuizMain(data) {
     message = "Good luck in this computer science quiz!";
     $("#user_message p").html(message);
 
-    $("#user_message").slideDown(500, function() {
+    $("#user_message").slideDown(500, function () {
       $("#user_message").removeClass("hidden");
       $("#user_message").addClass("welcome");
     });
