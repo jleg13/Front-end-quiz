@@ -31,7 +31,7 @@ function initRegistrationSubmitButtonListener() {
 //submit validated form to the server
 function submitRegistrationForm() {
   $.ajax({
-    url: "http://jleg13.educationhost.cloud/register.php",
+    url: "https://jleg13.educationhost.cloud/register.php",
     method: "POST",
     data: $("#registration").serialize(),
     dataType: "json",
@@ -169,10 +169,4 @@ function displayQuizMain(data) {
       $("#user_message").addClass("welcome");
     });
   });
-  // //hide&display side bar
-  // $('#welcome').slideUp(500, function () {
-  //     //display the start button
-  //     $("#welcome a").removeClass('hidden');
-  //     $('#welcome').slideDown(500);
-  // });
 }
