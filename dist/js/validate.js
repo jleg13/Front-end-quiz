@@ -31,7 +31,7 @@ function initRegistrationSubmitButtonListener() {
 //submit validated form to the server
 function submitRegistrationForm() {
   $.ajax({
-    url: "http://jleg13.educationhost.cloud/register.php",
+    url: "https://jleg13.educationhost.cloud",
     method: "POST",
     data: $("#registration").serialize(),
     dataType: "json",
