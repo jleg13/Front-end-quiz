@@ -2,6 +2,7 @@
 $(function () {
     initStartQuizButtonListener();
     initQuizSubmitButtonListener();
+    initExitQuizButtonListener();
 });
 
 //global variables
@@ -21,6 +22,10 @@ function initStartQuizButtonListener() {
                 populateQuiz();
             });
 
+        } else if ($('#user_message').hasClass('restart')) {
+            $('#user_message').slideUp(500, function () {
+                populateQuiz();
+            });
         }
     });
 }
@@ -43,6 +48,34 @@ function initQuizSubmitButtonListener() {
             submitAnswer(answer);
         }
     });
+}
+
+//sets the listener for the exit button on the results page
+function initExitQuizButtonListener() {
+    $("#logOut a").click(function (e) {
+        $('#user_message').slideUp(500, function () {
+            $('#user_message').addClass('hidden');
+            $('#logOut').addClass('hidden');
+            $('#quizStart').html('Start');
+
+            resetForm();
+
+            $("#registration").slideDown(500, function () {
+                $("#registration").removeClass("hidden");
+            });
+        });
+    });
+}
+
+//utility function to reset form
+function resetForm() {
+    $('#registration').get(0).reset();
+    $('.form-control').each(function () {
+        $(this).removeClass('is-valid');
+        $(this).next().addClass('hidden');
+    });
+
+
 }
 
 
@@ -149,6 +182,9 @@ function addQuestion() {
         $(this).html(quizQuestionData[count].choices[value]);
     });
 
+    //add frame
+    $('.form').addClass('frame')
+
     updateScoreText();
 
     //display updated quiz
@@ -193,19 +229,18 @@ function displayResults() {
         return advice;
     }
 
-    $('#quiz').append($element('<p/>', 'result', 'results', message));
-    $('#quiz').append($element('<p/>', 'result', '', advice));
-    $('#quiz fieldset').addClass('hidden');
-    $('#quiz legend').addClass('hidden');
+    $("#user_message h3").html(message);
+    $("#user_message p").html(advice);
+    $('#user_message').addClass('message_bg');
+    $('#user_message').removeClass('welcome');
+    $('.form').removeClass('frame')
+    $('#user_message').addClass('restart');
+    $('#logOut').removeClass('hidden');
+    $('#quizStart').html('Restart');
 
     // display final message
-    $('#quiz').slideDown(500, function () {
-        $('#quiz').removeClass('hidden');
-    });
-
-    //side bar restart
-    $('#welcome').slideDown(500, function () {
-        $('#welcome').removeClass('hidden');
+    $('#user_message').slideDown(500, function () {
+        $('#user_message').removeClass('hidden');
     });
 
     //reset quiz
@@ -222,16 +257,16 @@ function displayIcon(data) {
     var answer = (data.correct) ? 'correctImg' : 'incorrectImg';
 
     //display icon
-    $('#answers input').addClass('invisible');
-    $('#answers input').addClass('absolute');
-    $('#answers fieldset').addClass('align');
+    // $('#answers input').addClass('invisible');
+    // $('#answers input').addClass('absolute');
+    // $('#answers form-group').addClass('align');
     $('#answers input:checked~label').addClass(answer);
 
     $('#quiz').delay(1000).slideUp(500, function () {
         //remove the icon after delay
-        $('#answers input').removeClass('invisible');
-        $('#answers input').removeClass('absolute');
-        $('#answers fieldset').removeClass('align');
+        // $('#answers input').removeClass('invisible');
+        // $('#answers input').removeClass('absolute');
+        // $('#answers form-group').removeClass('align');
         $('#answers input:checked~label').removeClass(answer);
 
         //reset radio buttons
@@ -245,9 +280,8 @@ function displayIcon(data) {
             addQuestion();
         }
     });
-    //side results accumulator
-    $('#score').delay(1000).slideUp(500, function () {
-        $('#score').addClass('hidden');
-        $('#sidebar p span').html('Try again.');
+    //score
+    $('#score_message').delay(1000).slideUp(500, function () {
+        $('#score_message').addClass('hidden');
     });
 }

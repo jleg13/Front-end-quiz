@@ -7806,6 +7806,15 @@ main {
     .form #quizError span {
       background-color: rgba(0, 0, 0, 0.2);
       font-size: 1.1rem; }
+  .form #questionBox {
+    border-bottom: rgba(255, 255, 255, 0.5) solid 2px;
+    padding-bottom: 1rem; }
+  .form #framebottom {
+    border-bottom: rgba(255, 255, 255, 0.5) solid 2px; }
+
+.frame {
+  border: rgba(255, 255, 255, 0.5) solid 2px;
+  border-radius: 10px 25px; }
 
 #score_message {
   background-color: rgba(145, 145, 145, 0.671);
@@ -7814,6 +7823,18 @@ main {
   padding: 1rem 3rem; }
   #score_message ul li {
     display: inline; }
+
+#user_message {
+  background-color: rgba(145, 145, 145, 0.671);
+  border-radius: 10px 25px;
+  margin-top: 1rem;
+  padding: 1rem 3rem; }
+
+.message_bg {
+  background-color: rgba(145, 145, 145, 0.671);
+  border-radius: 10px 25px;
+  margin-top: 1rem;
+  padding: 1rem 3rem; }
 
 /* You can add your own CSS in this file. 
    As this file is loaded last, you can override other CSS styles, if needed.     
@@ -7847,14 +7868,12 @@ main {
 .correctImg {
   background: url(../img/correct.png) no-repeat right center !important;
   background-size: 20px !important;
-  float: right !important;
   color: #59d12a !important; }
 
 /* styling to add an icon cross */
 .incorrectImg {
   background: url(../img/incorrect.png) no-repeat right center !important;
   background-size: 20px !important;
-  float: right !important;
   color: #dd1414 !important; }
 
 /* forces correct alignment of icon */

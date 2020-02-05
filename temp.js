@@ -19,7 +19,7 @@ function displayResults() {
         return advice;
     }
 
-     $("#user_message h3").html(results);
+     $("#user_message h3").html(result);
      $("#welcome p").html(advice);
      $('#logout').removeClass(hidden);
      $('#quizStart').html('Try Again')

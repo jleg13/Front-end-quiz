@@ -29,6 +29,20 @@ main {
         }
 
     }
+
+    #questionBox {
+        border-bottom: rgba($color: #fff, $alpha: 0.5) solid 2px;
+        padding-bottom: 1rem;
+    }
+
+    #framebottom {
+        border-bottom: rgba($color: #fff, $alpha: 0.5) solid 2px;
+    }
+}
+
+.frame {
+    border: rgba($color: #fff, $alpha: 0.5) solid 2px;
+    border-radius: 10px 25px;
 }
 
 #score_message {
@@ -40,8 +54,20 @@ main {
     ul li {
         display: inline;
     }
+}
 
+#user_message {
+    background-color: rgba(145, 145, 145, 0.671);
+    border-radius: 10px 25px;
+    margin-top: 1rem;
+    padding: 1rem 3rem;
+}
 
+.message_bg {
+    background-color: rgba(145, 145, 145, 0.671);
+    border-radius: 10px 25px;
+    margin-top: 1rem;
+    padding: 1rem 3rem;
 }
 
 
@@ -84,7 +110,7 @@ main {
 .correctImg {
     background: url(../img/correct.png) no-repeat right center !important;
     background-size: 20px !important;
-    float: right !important;
+    // float: right !important;
     color: #59d12a !important;
 }
 
@@ -92,7 +118,7 @@ main {
 .incorrectImg {
     background: url(../img/incorrect.png) no-repeat right center !important;
     background-size: 20px !important;
-    float: right !important;
+    // float: right !important;
     color: #dd1414 !important;
 }
 
