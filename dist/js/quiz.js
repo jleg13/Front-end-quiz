@@ -254,20 +254,14 @@ function displayResults() {
 //display an icon if answer correct or incorrect 
 function displayIcon(data) {
     //choose which icon to display
-    var answer = (data.correct) ? 'correctImg' : 'incorrectImg';
+    var answer = (data.correct) ? 'borderCorrect' : 'borderIncorrect';
 
     //display icon
-    // $('#answers input').addClass('invisible');
-    // $('#answers input').addClass('absolute');
-    // $('#answers form-group').addClass('align');
-    $('#answers input:checked~label').addClass(answer);
+    $('#answers input:checked~label').parent().addClass(answer);
 
     $('#quiz').delay(1000).slideUp(500, function () {
         //remove the icon after delay
-        // $('#answers input').removeClass('invisible');
-        // $('#answers input').removeClass('absolute');
-        // $('#answers form-group').removeClass('align');
-        $('#answers input:checked~label').removeClass(answer);
+        $('#answers input:checked~label').parent().removeClass(answer);
 
         //reset radio buttons
         $('#answers input').prop('checked', false);

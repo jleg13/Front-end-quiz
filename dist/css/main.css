@@ -7836,9 +7836,6 @@ main {
   margin-top: 1rem;
   padding: 1rem 3rem; }
 
-/* You can add your own CSS in this file. 
-   As this file is loaded last, you can override other CSS styles, if needed.     
-*/
 /* use this class to hide elements 
    the space for the element will NOT be preserved
 */
@@ -7863,6 +7860,14 @@ main {
 /* used to re-align radio button when inserting icon */
 .absolute {
   position: absolute; }
+
+.borderCorrect {
+  background-color: rgba(40, 167, 69, 0.3);
+  border-radius: 10px; }
+
+.borderIncorrect {
+  background-color: rgba(220, 53, 69, 0.3);
+  border-radius: 10px; }
 
 /* styling to add an icon tick */
 .correctImg {
