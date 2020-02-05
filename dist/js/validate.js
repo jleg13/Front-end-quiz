@@ -162,7 +162,7 @@ function displayQuizMain(data) {
     $("#user_message h3").html(greeting);
 
     message = "Good luck in this computer science quiz!";
-    $("#user_message p").html(message);
+    $("#welcome p").html(message);
 
     $("#user_message").slideDown(500, function () {
       $("#user_message").removeClass("hidden");

@@ -8,35 +8,37 @@ $(function () {
 var quizQuestionData = [];
 var completed = false;
 var count = 0;
+//results[0 ]= attempted; results[1]= correct; results[2]= incorrect;
 var results = [0, 0, 0];
 
-//setup the button listener for the start quiz link in the side bar
+// setup the button listener for the start quiz link in the side bar
 function initStartQuizButtonListener() {
 
-    $("#startQuiz").click(function (e) {
-        if ($('#startQuiz').hasClass('welcome')) {
+    $("#quizStart").click(function (e) {
+        if ($('#user_message').hasClass('welcome')) {
             //hide quiz welcome
-            $('#startQuiz').slideUp(500, function () {
+            $('#user_message').slideUp(500, function () {
                 populateQuiz();
             });
 
-        } 
+        }
     });
 }
+
 
 
 //setup the submit event listener for the submit registration form button
 function initQuizSubmitButtonListener() {
     $("#quiz").submit(function (e) {
         e.preventDefault();
-        clearErrors();
+        $('#quizError').addClass('invisible')
 
         //identify the checked answer
         var answer = $('#quiz input[name=answer]:checked').val();
 
         //if none checked display error
         if (answer === undefined) {
-            addError('You must select an answer');
+            $('#quizError').removeClass('invisible')
         } else {
             submitAnswer(answer);
         }
@@ -47,7 +49,7 @@ function initQuizSubmitButtonListener() {
 //send a selected answer for checking
 function submitAnswer(answer) {
     $.ajax({
-        url: 'http://turing.une.edu.au/~jbisho23/assignment2/quiz.php',
+        url: 'https://quizmainbackend.herokuapp.com/',
         data: {
             q: quizQuestionData[count].id,
             a: answer
@@ -87,7 +89,7 @@ function updateQuizProgress(data) {
 //populate quiz once user logged in and selects to start quiz
 function populateQuiz() {
     $.ajax({
-        url: '',
+        url: 'https://quizmainbackend.herokuapp.com/',
         method: 'GET',
         dataType: 'json',
         success: function (data) {
@@ -108,7 +110,7 @@ function populateQuiz() {
 // Data is preloaded to global variable to stop the need for Ajax requests during the quiz to keep quiz responsiveness consistant between questions.
 function retrieveQuestion(questionIds, i) {
     $.ajax({
-        url: 'http://turing.une.edu.au/~jbisho23/assignment2/quiz.php',
+        url: 'https://quizmainbackend.herokuapp.com/',
         data: {
             'q': questionIds.questions[i]
         },
@@ -134,6 +136,7 @@ function retrieveQuestion(questionIds, i) {
 
 //add question to quiz
 function addQuestion() {
+    quizQuestionData.forEach(element => {});
     //add new question
     $('#quiz_question').html(quizQuestionData[count].text);
 
@@ -154,8 +157,8 @@ function addQuestion() {
     });
 
     // display results
-    $('#score').slideDown(500, function () {
-        $('#score').removeClass('hidden');
+    $('#score_message').slideDown(500, function () {
+        $('#score_message').removeClass('hidden');
     });
 }
 
@@ -163,7 +166,7 @@ function addQuestion() {
 //update score displayed to screen
 function updateScoreText() {
     var i = 0;
-    $('aside ul li span').each(function () {
+    $('#score_message ul li span').each(function () {
         $(this).html(results[i]);
         i++;
     });

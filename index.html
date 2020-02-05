@@ -18,7 +18,7 @@
     <!-- Registration form -->
     <div class="form">
       <div class="container justify-content-center">
-        <form method="post" id="registration" novalidate>
+        <form method="post" id="registration" class="" novalidate>
           <div class="form-row justify-content-center">
             <div class="form-group col-md-6">
               <label for="name">Name</label>
@@ -92,8 +92,8 @@
             </div>
           </div>
           <div class="row">
-            <div class="col">
-              <a id="startQuiz" class="btn btn-primary" href="#quiz" role="button">Start</a>
+            <div id="qs" class="col">
+              <a id="quizStart" class="btn btn-primary" href="#" role="button">Start</a>
             </div>
 
           </div>
@@ -101,6 +101,7 @@
 
         <!-- Quiz form -->
         <form method="post" id="quiz" class="hidden">
+          <h3>Computer Science Quiz</h3>
           <div class="form-row justify-content-flexstart">
             <div class="form-group col-md-6">
               <label id="quiz_question">QUESTION TEXT HERE</label>
@@ -124,14 +125,29 @@
               <input type="radio" name="answer" id="answer_d" value="D" />
               <label for="answer_d">ANSWER 4</label>
             </div>
-
+            <div id="quizError" class="invisible form-group info_box col-md-8">
+              <span class="justify-content-flexstart text-danger border border-danger rounded p-2">Must select an option</span>
+            </div>
             <div class="form-row justify-content-center">
               <button class="btn btn-primary button" type="submit">Submit form</button>
             </div>
 
         </form>
-
       </div>
+    </div>
+    <!-- Score console -->
+    <div id="score_message" class="hidden container-fluid ">
+      <h3>Score:</h3>
+      <div class="row info_box justify-content-center">
+        <div class="col">
+          <ul id="score" class="">
+            <li class="pr-5" id="attempted">Attempted: <span></span></li>
+            <li class="pr-5" id="correct">Correct: <span></span></li>
+            <li class="pr-5" id="incorrect">Incorrect: <span></span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
     </div>
   </main>
 

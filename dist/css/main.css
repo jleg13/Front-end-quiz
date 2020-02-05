@@ -7801,6 +7801,19 @@ main {
 
 .form {
   color: white; }
+  .form #quizError {
+    margin-bottom: 0.7rem; }
+    .form #quizError span {
+      background-color: rgba(0, 0, 0, 0.2);
+      font-size: 1.1rem; }
+
+#score_message {
+  background-color: rgba(145, 145, 145, 0.671);
+  border-radius: 10px 25px;
+  margin-top: 1rem;
+  padding: 1rem 3rem; }
+  #score_message ul li {
+    display: inline; }
 
 /* You can add your own CSS in this file. 
    As this file is loaded last, you can override other CSS styles, if needed.     
