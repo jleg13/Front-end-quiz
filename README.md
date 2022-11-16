@@ -10,14 +10,14 @@ This project was developed in the web programming unit, COSC260, at UNE. It is a
 
 ## Deployment
 
-Currently deployed at on a test site to showcase project at[jlg-fullstack-project](https://optimistic-yalow-ad5e25.netlify.com/#quiz).
+Currently deployed at on a test site to showcase project at [jlg-fullstack-project](https://optimistic-yalow-ad5e25.netlify.com/#quiz).
 
 ## Built With
 
-* [Bootstrap](https://getbootstrap.com/) - Front-end framework
-* [Sass](https://sass-lang.com/) - CSS extension language
-* [jQuery](https://jquery.com/) - JavaScript library
-* [PHP](https://www.php.net/) - Programming language
+![Bootstrap](https://img.shields.io/badge/bootstrap-%23563D7C.svg?style=for-the-badge&logo=bootstrap&logoColor=white)
+![SASS](https://img.shields.io/badge/SASS-hotpink.svg?style=for-the-badge&logo=SASS&logoColor=white)
+![jQuery](https://img.shields.io/badge/jquery-%230769AD.svg?style=for-the-badge&logo=jquery&logoColor=white)
+![PHP](https://img.shields.io/badge/php-%23777BB4.svg?style=for-the-badge&logo=php&logoColor=white)
 
 ## Authors
 
@@ -25,6 +25,3 @@ Currently deployed at on a test site to showcase project at[jlg-fullstack-projec
 
 ## Support:
 Please email joshualegresley@gmail.com if further details are required.
-
-## Contributing:
-For major changes, please open an issue first to discuss what you would like to change.
